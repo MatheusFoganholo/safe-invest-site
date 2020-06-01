@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Safe-Invest Brasil</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,user-scalable=0, initial-scale=1.0, maximum-scale=1.0" />
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <!-- Menu Area -->
+    <header id="menu">
+        <section class="max-width">
+
+            <!-- Logo -->
+            <div class="itens-flex">
+                <a href="index.html"><svg id="logo" xmlns="http://www.w3.org/2000/svg" width="139" height="28" viewBox="0 0 139 28"><g transform="translate(0 1)"><g fill="none" stroke="#000" stroke-width="2"><rect width="24" height="27" rx="4" stroke="none"/><rect x="1" y="1" width="22" height="25" rx="3" fill="none"/></g><path d="M11.36,22.24V20.52a5.842,5.842,0,0,1-2.56-.74A7.082,7.082,0,0,1,7,18.26l1.46-1.32a5.618,5.618,0,0,0,1.35,1.22,4.074,4.074,0,0,0,1.69.58V14.26a6.364,6.364,0,0,1-3.12-1.39,3.256,3.256,0,0,1-.96-2.45A3.224,3.224,0,0,1,8.48,7.88a5.055,5.055,0,0,1,2.88-1.14V5h1.7V6.74a5.708,5.708,0,0,1,2.23.64A5.308,5.308,0,0,1,16.94,8.8l-1.48,1.22a4.04,4.04,0,0,0-1.05-.97,3.847,3.847,0,0,0-1.47-.53v4.1l.08.02a12.419,12.419,0,0,1,1.88.62,4.549,4.549,0,0,1,1.27.79,2.663,2.663,0,0,1,.71,1.04,3.911,3.911,0,0,1,.22,1.37,3.719,3.719,0,0,1-1.05,2.7,4.853,4.853,0,0,1-2.99,1.32v1.76ZM15,16.6a1.8,1.8,0,0,0-.44-1.25,3.26,3.26,0,0,0-1.62-.79v4.16A2.63,2.63,0,0,0,14.46,18,1.937,1.937,0,0,0,15,16.6ZM9.5,10.32a1.6,1.6,0,0,0,.49,1.27,3.84,3.84,0,0,0,1.51.71V8.5a2.8,2.8,0,0,0-1.48.6A1.549,1.549,0,0,0,9.5,10.32Z" fill="#2e369a"/><text transform="translate(32 21)" fill="#2e369a" font-size="21" font-family="IBMPlexSans-Medium, IBM Plex Sans" font-weight="500"><tspan x="0" y="0">safe-invest</tspan></text></g></svg></a>
+            </div>
+
+            <!-- Menu Desktop -->
+            <div class="itens-flex">
+                <nav id="menu-itens">
+                    <ul>
+                        <a href="investimentos.html"><li>Investimentos</li></a>
+                        <a href="sobre.html"><li>Sobre</li></a>
+                        <a href="contato.html"><li>Contato</li></a>
+                        <a href="cadastro.html"><li>Cadastre-se</li></a>
+                    </ul>
+                </nav><!--menu-itens-->
+            </div><!--itens-flex-->
+        </section><!--max-width-->
+    </header><!--menu-->
+
+      <!-- Navigation Menu For Cellphone-->
+      <nav id="nav-mobile">
+        <input id="navbar" type="checkbox" onclick="openMenuMobile()"/>
+        <label for="navbar">
+          <div class="menu-mobile" id="menu-mobile-button">
+            <span class="mobile"></span>
+          </div><!--menu-mobile-->
+        </label><!--navbar-->
+
+        <!-- Links Menu Mobile -->
+        <ul id="ul-mobile">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="investimentos.html">Investir</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul><!--ul-mobile-->
+    </nav><!--nav-mobile-->
+
+    <!-- Register -->
+    <div id="register-page">
+        <h1 class="padding-half">Faça a sua inscrição!</h1>
+            <section class="max-width2 padding">
+                <img id="steps" src="images/etapa1.png">
+
+                    <form id="register-form" method="post">
+                        <label for="register-name">
+                          Nome<input id="register-name" type="name" name="name" placeholder="Digite o seu nome" required />
+                        </label><!--register-name-->
+                        <label for="register-email">
+                          E-mail<input id="register-email" type="email" name="email" placeholder="Digite o seu e-mail"
+                            required />
+                        </label><!--register-email-->
+                        <label for="register-cpf">
+                            CPF<input id="register-cpf" type="text" name="cpf"
+                              placeholder="xxx.xxx.xxx-xx" required />
+                          </label><!--register-cpf-->
+                        <label for="register-endereco">
+                          Endereço<input id="register-endereco" type="text" name="endereco"
+                            placeholder="Nome da Rua, N°123" required />
+                        </label><!--register-endereco-->
+                        <label for="register-estado">
+                            Estado<input id="register-estado" type="text" name="estado"
+                              placeholder="Ex: SP" required />
+                        </label><!--register-estado-->
+                        <label for="register-cep">
+                            CEP<input id="register-cep" type="text" name="cep"
+                              placeholder="xx.xxx-xxx" required />
+                        </label><!--register-estado-->
+                       <a href="cadastro-2.html">Próxima Etapa</a>
+                </form><!--register-form-->
+            </section><!--max-width2 padding-->
+    </div><!--register-page-->
+
+    <!-- First Footer -->
+    <footer>
+        <section class="max-width">
+
+            <!-- Site Map -->
+            <div class="itens-flex">
+                <h1>Mapa do Site</h1>
+                <ul>
+                    <a href="index.html"><li>Home</li></a>
+                    <a href="cadastro.html"><li>Cadastro</li></a>
+                    <a href="investimentos.html"><li>Investir</li></a>
+                    <a href="sobre.html"><li>Sobre</li></a>
+                    <a href="contato.html"><li>Contato</li></a>
+                    <a href="#logo"><li>Voltar Ao Topo</li></a>
+                </ul>
+            </div><!--itens-flex-->
+
+            <!-- Social Media -->
+            <div class="itens-flex">
+                <h1 class="margin-bottom-20">Redes Sociais</h1>
+                <a class="media-icons facebook" href="#"><img src="images/facebook.svg"></a>
+                <a class="media-icons twitter"  href="#"><img src="images/twitter.svg"></a>
+                <a class="media-icons instagram"  href="#"><img src="images/instagram.svg"></a>
+                <a class="media-icons youtube"  href="#"><img src="images/youtube.svg"></a>
+            </div><!--itens-flex-->
+
+            <!-- About Us -->
+            <div class="itens-flex">
+                <h1>Sobre</h1>
+                <p>A safe-invest é uma empresa de investimentos criada para facilitar a vida de investidores.</p>
+                <p>Conosco, você investe rapidamente o seu dinheiro, sem burocracia, e sem valor mínimo.</p>
+            </div><!--itens-flex-->
+        </section><!--max-width-->
+    </footer><!--first-footer-->
+
+    <!-- Footer (All Rights Reserved) Area -->
+    <footer id="all-rights-reserved">
+            <p>Safe-Invest © 2008-2019.</p>
+            <p>Todos os direitos reservados.</p>
+    </footer><!--all-rights-reserved-->
+
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
+</body>
+</html> 
