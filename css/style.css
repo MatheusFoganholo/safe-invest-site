@@ -1,0 +1,1383 @@
+/* Body & Light Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+html,body {
+    height: 100%;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Menu Mobile */
+#nav-mobile {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    padding-top: 0px;
+    padding-left: 10px;
+    width: 45%;
+    height: 100%;
+    display: none;
+    z-index: 50;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    transition-property: all; 
+}
+
+#nav-mobile .menu-mobile {
+    background: #2E369A;
+    opacity: 0.9;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 60px;
+    position: fixed;
+    width: 60px;
+    z-index: 3;
+    top: 10px;
+    left: 10px;
+}
+
+#nav-mobile .menu-mobile label {
+    top: 15px;
+    left: 15px;
+    position: relative;
+}
+
+#nav-mobile .mobile {
+    position: relative;
+    top: 29px;
+    left: 15px;
+    width: 30px;
+    height: 2px;
+    background: white;
+    display: block;
+    transform-origin: center;
+    transition: .5s ease-in-out;
+}
+
+#nav-mobile .mobile:after,
+#nav-mobile .mobile:before {
+    background: white;
+    content: "";
+    display: block;
+    transition: .5s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#nav-mobile .mobile:before {
+    top: -10px;
+}
+
+#nav-mobile .mobile:after {
+    bottom: -10px;
+}
+
+#nav-mobile input {
+    display: none;
+}
+
+#nav-mobile input:checked ~ label .menu-mobile {
+    border-radius: 50%;
+}
+
+#nav-mobile input:checked ~ label .mobile {
+    transform: rotate(45deg);
+}
+
+#nav-mobile input:checked ~ label .mobile:after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+#nav-mobile input:checked ~ label .mobile:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+#nav-mobile input:checked ~ ul {
+    opacity: 1;
+    left: 0;
+    visibility: visible;
+}
+
+#nav-mobile ul {
+    position: absolute;
+    left: 0px;
+    list-style: none;
+    font-size: 45px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    transition-property: all; 
+}
+
+#nav-mobile ul li:first-child {
+    margin-top: 100px;
+}
+
+#nav-mobile ul li {
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    font-size: 0.7em;
+}
+
+#nav-mobile ul li a:hover {
+    color: #2E369A;
+}
+
+#nav-mobile ul li:nth-of-type(1)::after,
+#nav-mobile ul li:nth-of-type(2)::after,
+#nav-mobile ul li:nth-of-type(3)::after,
+#nav-mobile ul li:nth-of-type(4)::after {
+    content: '';
+    background-color: #2E369A;
+    width: 150px;
+    color: #2E369A;
+    height: 4px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+#nav-mobile a {
+    color: white;
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+/* Max Width Screen */
+.max-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.max-width2 {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Columns */
+.itens-flex {
+    flex: 1;
+    justify-content: center;
+}
+
+/* First Section */
+#intro {
+    background-color: #FEFEFE;
+}
+
+/* Standard Padding */
+.padding {
+    padding-top: 40px;
+    padding-bottom: 40px
+}
+
+/* Half Padding */
+.padding-half {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Padding Only Bottom */
+.padding-b {
+    padding-bottom: 40px
+}
+
+/* Half Padding Only Bottom */
+.padding-half-bottom {
+    padding-bottom: 25px
+}
+
+/* Menu Desktop */
+#menu {
+    height: calc(auto + 3px);
+    width: 100%;
+    background: #F2F2F2;
+}
+
+#logo {
+    margin-top: 15px;
+}
+
+#menu-itens ul {
+    text-align: right;
+    font-weight: 700;
+    list-style-type: none;
+}
+
+#menu-itens ul a {
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+#menu-itens ul li {
+    text-decoration: none;
+    font-style: normal;
+}
+
+#menu-itens ul a:nth-of-type(1),
+#menu-itens ul a:nth-of-type(2),
+#menu-itens ul a:nth-of-type(3) {
+    margin-right: 17px;
+}
+
+#menu-itens ul a:nth-of-type(1):hover,
+#menu-itens ul a:nth-of-type(2):hover,
+#menu-itens ul a:nth-of-type(3):hover {
+    color: #2E369A;
+}
+
+#menu-itens ul a:last-child:hover {
+    background-color: #222;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    transition-property: all;
+}
+
+#menu-itens ul a:last-child {
+    background-color: #2E369A;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    color: white;
+}
+
+/* Intro Area */
+#intro h1 {
+    font-weight: 500;
+    font-size: 42px;
+    margin-bottom: 40px;
+    max-width: 400px;
+}
+
+/* Buttons */
+.button {
+    background-color: #2E369A;
+    padding: 15px 40px;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #222;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    transition-property: all;
+}
+
+.button2 {
+    padding: 10px;
+    background-color: #2E369A;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.button2:hover {
+    background-color: #222;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    transition-property: all;
+}
+
+/* Invest Area */
+#banks {
+    background-image: radial-gradient(closest-side at 50% 50%, rgb(46,54,154), rgb(42, 48, 144), rgb(38, 42, 134));
+}
+
+#banks2 {
+    background-color: #FEFEFE;
+}
+
+.bg-white {
+    background-color: white;
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.title2 h1 {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    padding-bottom: 40px;
+}
+
+#invest-button {
+    text-align: center;
+    margin: 40px auto 0 auto;
+    font-size: 20px;
+    color: white;
+    display: block;
+    max-width: 250px;
+    padding: 10px;
+    border: 3px solid white;
+    border-radius: 4px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+#invest-button:hover {
+    background-color: #222;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    transition-property: all;
+}
+
+.marg1n {
+    margin-left: 30px;
+    margin-right: 15px;
+}
+
+.marg2n {
+    margin-left: 15px;
+    margin-right: 30px;
+}
+
+.plus::after {
+    content:'+';
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2E369A;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 80px;
+}
+
+.bg-white h1 {
+    color: #222;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.bg-white h2 {
+    color: #2E369A;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.bg-white h2::after {
+    display: block;
+    content: '';
+    width: 40px;
+    height: 3px;
+    background-color: #DEDEDE;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bg-white h3 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #808080;
+    font-weight: 600;
+}
+
+.title h1 {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 36px;
+}
+
+/* Benefits Area */
+#benefits .itens-flex {
+    margin-top: 60px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 400px;
+}
+
+#benefits .itens-flex h2 {
+    font-weight: 600;
+    max-width: 300px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#benefits .itens-flex p {
+    margin-top: 10px;
+    color: #808090;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.call-to-action {
+   margin: 0 auto;
+   text-align: center;
+   display: block;
+   width: 250px;
+   font-size: 20px;
+}
+
+/* Quote Area */
+#bg-quote {
+    background-color: #2E369A;
+    opacity: 1;
+}
+
+#quote {
+    background-image: url(../images/citacao.png);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 600;
+    height: 500px;
+}
+
+#quote h1 {
+    font-size: 36px;
+    padding-top: 180px;
+
+}
+
+#quote h2 {
+    color: #AFAFAF;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 20px;
+    padding-bottom: 320px;
+}
+
+#quote h2::before {
+    content: '';
+    display: inline-block;
+    width: 11px;
+    height: 2px;
+    background-color: #AFAFAF;
+    margin-right: 7px;
+    margin-bottom: 5px;
+}
+
+/* Register Area */
+#register h1 {
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+#register label {
+    display: block;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+#register input {
+    display: block;
+    width: 90%;
+    margin-right: 10%;
+    background-color: #DDDDDD;
+    border: 0;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#register #contact-email {
+    margin-bottom: 50px;
+}
+
+#register .itens-flex img {
+    display: block;
+    margin: 60px auto 40px auto;
+}
+
+#register .itens-flex h2 {
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+#register .itens-flex a {
+    margin-bottom: 120px;
+}
+
+/* Footer Area */
+footer {
+    background-color: #000;
+    padding-top: 30px;
+    padding-bottom: 22px;
+}
+
+footer h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+footer p {
+    color: #707070;
+}
+
+footer p:nth-of-type(1) {
+    margin-top: 15px;
+}
+footer p:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    display: inline-block;
+    color: #707070;
+    width: 40%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+footer ul li::before {
+    content: '';
+    display: inline-block;
+    background-color: #707070;
+    height: 2px;
+    width: 11px;
+    margin-bottom: 4px;
+    margin-right: 7px;
+}
+
+footer ul a li:hover {
+    color: white;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 10px;
+}
+
+footer img {
+    border: 4px solid black;
+    border-radius: 50%;
+    background-color: #2E369A;
+}
+
+.facebook, .twitter, .instagram {
+    margin-right: 10px;
+}
+
+footer img:hover {
+    border: 4px solid #2E369A;
+    background-color: #2E369A;
+}
+
+#all-rights-reserved {
+    background-color: #2E369A;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    margin: 0 auto;
+}
+
+#all-rights-reserved p {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+
+/* Contact Page */
+#contact-page .max-width {
+    flex-direction: column;
+}
+
+#contact-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#contact-form label, #contact-form input, #contact-form textarea {
+    display: block;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0 auto;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    outline: none;
+}
+
+#contact-form label {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#contact-form input {
+    margin-top: 5px;
+    width: 600px;
+    height: 50px;
+    padding: 10px;
+    border: 3px solid #2E369A;
+}
+
+#contact-form textarea {
+    width: 600px;
+    height: 150px;
+    margin-top: 5px;
+    padding: 10px;
+    border: 3px solid #2E369A;
+    resize: none;
+}
+
+#contact-page h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#contact-media {
+    margin: 0 auto;
+}
+
+#contact-form input[type="submit"], #contact-form input[type="reset"] {
+    display:inline;
+    max-width: 290px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #2E369A;
+    background-color: white;
+}
+
+#contact-form input[type="submit"]:hover, #contact-form input[type="reset"]:hover {
+    background-color: #2E369A;
+    color: white;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    transition-property: all;
+}
+
+#contact-form input[type="submit"] {
+    margin-left: 15px;
+}
+
+/* Register Page */
+#register-page {
+    background-color: white;
+}
+
+#register-page h1, #about-page h1 {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+    background-color: #2E369A;
+}
+
+#contact-page h1 {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    background-color: #2E369A;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+#steps {
+    text-align: center;
+    margin: 0 auto 40px auto;
+}
+
+#register-form label {
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    min-width: calc(48% - 40px);
+    text-align: left;
+}
+
+#register-form-2 label {
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+#register-form input {
+    display: block;
+    margin: 10px auto 20px auto;
+    height: 50px;
+    width: 100%;
+    background-color: #DDDDDD;
+    border: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-style: italic;
+}
+
+#register-form-2 input {
+    display: block;
+    margin: 10px auto 20px auto;
+    height: 50px;
+    width: 100%;
+    background-color: #DDDDDD;
+    border: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-style: italic;
+}
+
+#register-form label:nth-of-type(1),
+#register-form label:nth-of-type(3),
+#register-form label:nth-of-type(5) {
+    margin-right: 40px;
+}
+
+#register-form input:focus, #register-form input:hover {
+    outline: none;
+}
+
+#register-form, #register-form-2 {
+    margin-bottom: 80px;
+}
+
+#register-form a {
+    float: right;
+    margin-right: 40px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    background-color: #2E369A;
+    padding: 20px;
+    border: 0px;
+    border-radius: 4px;
+}
+
+#register-form-2 a {
+    float: right;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    background-color: #2E369A;
+    padding: 20px;
+    border: 0px;
+    border-radius: 4px ;
+}
+
+#register-form a::after {
+    content: '﹥';
+    display: inline;
+    color: white;
+    margin-left: 5px;
+}
+
+#register-form-2 a::after {
+    content: '✔';
+    display: inline;
+    color: white;
+    margin-left: 5px;
+}
+
+#register-form a:hover, #register-form-2 a:hover {
+    background-color: #222;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    transition-property: all;
+}
+
+#register-page p {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+#done-svg {
+    margin-top: 40px;
+}
+
+/* About Page */
+#about-page p {
+    font-size: 20px;
+    line-height: 1.4em;
+    max-width: 80%;
+    margin: 0 auto 20px auto;
+    text-align: justify;
+}
+
+#about-page img {
+    width: 80%;
+    border-radius: 4px;
+    border: 3px solid white;
+    box-shadow: 0px 0px 5px #222;
+    margin-top: 10px;
+}
+
+/* Responsivity */
+/* Tablet Display */
+@media only screen and (max-width: 1200px) {
+    /* Menu */
+    #menu .itens-flex:first-child {
+        padding-left: 100px;
+        max-width: 200px;
+    }
+
+    #menu .itens-flex:last-child {
+        padding-right: 100px;
+    }
+
+    /* Intro Area */
+    .plan {
+        margin-left: 70px;
+    }
+
+    .svg-impact {
+        margin-right: 20px;
+    }
+
+    /* Invests Area */
+    #banks .max-width {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #banks .itens-flex {
+        margin: 0 auto 20px auto;
+        min-width: calc(25% - 100px);
+    }
+
+    #banks .itens-flex:nth-child(odd) {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    #banks .itens-flex:nth-of-type(4) {
+        margin-right: 20px;
+    }
+
+    #invest-button {
+        margin-top: 20px;
+    }
+
+    .plus::after {
+        margin-left: 5px;
+    }
+
+    /* Benefits Area */
+    #benefits .itens-flex {
+        min-width: calc(25% - 60px);
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #benefits .itens-flex:first-child {
+        margin-right: 20px;
+    }
+
+    #benefits .itens-flex:last-child {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #benefits .max-width {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    /* Register Area */
+    #register .itens-flex:first-child {
+        padding-left: 60px;
+    }
+
+    #register .itens-flex:last-child {
+        padding-right: 30px;
+    }
+
+    /* Footer Area */
+    footer .itens-flex:first-child {
+        margin-left: 40px;
+    }
+
+    footer .itens-flex:last-child {
+        margin-right: 40px;
+    }
+
+    footer .itens-flex:nth-of-type(2) {
+        margin-right: 40px;
+    }
+}
+
+/* Cellphone Responsive */
+@media only screen and (max-width: 800px) {
+    /* Menu */
+    #nav-mobile {
+        display: block;
+    }
+
+    #menu .itens-flex:first-child {
+        padding-left: 0px;
+        text-align: center;
+        max-width: auto;
+        margin: 0 auto;
+        padding-top: 5px;
+        }
+
+    #menu .itens-flex {
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* Header */
+    #logo {
+        margin: 10px auto 0px auto;
+        display: block;
+    }
+
+    #menu .itens-flex:last-child {
+        display:none;
+    }
+    
+    /* Standard */
+    .max-width {
+        flex-direction: column;
+    }
+
+    /* Intro Area */
+    #intro .itens-flex {
+        width: 100%;
+        margin: auto;
+    }
+
+    #intro h1 {
+        max-width: 290px;
+    }
+
+    #intro .itens-flex h1 {
+        font-size: 36px;
+        margin: 0 auto 40px auto;
+    }
+
+    .plan {
+        text-align: center;
+        order: 2;
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+
+    .svg-impact {
+        padding-top: 20px;
+        text-align: center;
+        order: 1;
+    }
+
+    /* Invest Area */
+    .title2 h1 {
+        font-size: 32px;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+    }
+    
+    #banks .max-width {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #banks .itens-flex {
+        margin: 0 auto 20px auto;
+        min-width: calc(50% - 40px);
+    }
+
+    #banks .itens-flex:nth-child(odd) {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    #banks .itens-flex:nth-child(even) {
+        margin-right: 20px;
+    }
+
+    #banks .itens-flex:nth-of-type(3),
+    #banks .itens-flex:nth-of-type(4) {
+        margin-bottom: 0px;
+    }
+
+    .plus::after {
+        margin-left: 5px;
+    }
+
+    #invest-button {
+        margin-top: 30px;
+    }
+
+    .padding {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    /* Benefits Area */
+    .title2 h1 {
+        font-size: 32px;
+        margin-bottom: 0px;
+        max-width: 80%;
+    }
+
+    #benefits h2 {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #benefits .max-width {
+        flex-direction: column;
+    }
+
+    #benefits .itens-flex {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    #benefits {
+        padding-bottom: 30px;
+    }
+
+    #benefits .itens-flex p {
+        margin-top: 0px;
+    }
+
+    #benefits .itens-flex:last-child {
+        margin-left: 0;
+    }
+
+    /* Quote*/
+    #quote {
+        height: auto;
+    }
+
+    #quote h1 {
+        font-size: 22px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 100px;
+    }
+
+    #quote h2 {
+        padding-bottom: 100px;
+    }
+
+    /* Register */
+    #register h1 {
+        text-align: center;
+    }
+
+    #register label {
+        display: block;
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    #register input {
+        display: block;
+        width: 80%;
+        background-color: #DDDDDD;
+        border: 0;
+        padding: 20px;
+        margin: 10px auto 0px auto;
+    }
+    
+    #register #contact-email {
+        margin-bottom: 40px;
+    }
+    
+    #register .itens-flex img {
+        display: block;
+        margin: 20px auto 20px auto;
+    }
+    
+    #register .itens-flex h2 {
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    #register .itens-flex a {
+        margin: 0 auto;
+        display: block;
+        max-width: 250px;
+        text-align: center;
+    }
+
+    #register .itens-flex:first-child {
+        margin-left: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+
+    #register .itens-flex:last-child {
+        margin-left: 0px;
+        padding-left: 0px;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+    /* Footer */
+    footer .itens-flex:first-child {
+        display: none;
+    }
+
+    footer .itens-flex:last-child {
+        display: none;
+    }
+
+    footer .itens-flex h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    footer .itens-flex {
+        text-align: center;
+    }
+
+    footer .itens-flex:nth-of-type(2) {
+        margin-left: 0;
+        padding-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    /* Contact */
+    #contact-form input {
+        width: 80%;
+    }
+    
+    #contact-form textarea {
+        width: 80%;
+        height: 150px;
+        margin-top: 5px;
+        padding: 10px;
+        border: 3px solid #2E369A;
+        resize: none;
+    }
+    
+    #contact-page h1 {
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    #contact-media {
+        margin: 0 auto;
+    }
+    
+    #contact-form input[type="submit"], #contact-form input[type="reset"] {
+        display:block;
+        width: 290px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    #contact-form input[type="submit"] {
+        margin: 10px auto 0 auto;
+    }
+
+    /* Register Area */
+    #register-form label {
+        display: block;
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #register-page img {
+        width: 90%;
+    }
+
+    #register-form label input {
+        margin: 10px auto 20px auto;
+    }
+
+    #register-form label:nth-of-type(1),
+    #register-form label:nth-of-type(3),
+    #register-form label:nth-of-type(5) {
+        margin: 0 auto;
+    }
+    
+    #register-form a {
+        margin-right: 10%;
+    }
+
+    #register-form {
+        margin-bottom: 100px;
+    }
+
+    #register-form-2 label {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #register-form-2 a {
+        margin-right: 10%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    /* Intro */
+    .svg-impact {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .plan {
+        padding-top: 0px;
+    }
+
+    #intro-image, #sup-image {
+        width: 100%;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    /* Invests */
+    #banks .max-width {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #banks .itens-flex {
+        margin-left: 0;
+        margin-right: 0;
+        width: calc(100% - 40px);
+    }
+
+    #banks .itens-flex:nth-of-type(2) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #banks .itens-flex:nth-of-type(4) {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+
+    /* Standard */
+    .padding {
+        padding-top: 20px;
+    }
+
+    /* Invests */
+    .plus::after {
+        margin-left: 100px;
+    }
+}
+
+/*  Animações Javascript */
+/* Fade In Anime */
+[data-anime] {
+	opacity: 0;
+}
+
+.fadeInLeft {
+	transform: translate3d(-20px, 0px, 0px);
+}
+
+.fadeInRight {
+    transform: translate3d(20px, 0px, 0px);
+}
+
+.fadeInDown {
+    transform: translate3d(0px, -20px, 0px);
+}
+
+.fadeInUp {
+    transform: translate3d(0px, 20px, 0px);
+}
+
+.anime {
+	opacity: 1;
+	transform: none;
+	transition: opacity 800ms, transform 800ms;
+}
+
+/* Pace Loading */
+.pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.pace-inactive {
+    display: none;
+}
+
+.pace .pace-progress {
+    background: #2E369A;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 4px;
+}
